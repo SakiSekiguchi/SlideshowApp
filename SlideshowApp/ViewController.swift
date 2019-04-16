@@ -104,7 +104,10 @@ class ViewController: UIViewController {
         
         if(clickNumber % 2 == 1){
             
+            if self.timer == nil{
             imageTimer()
+            }
+
             
             //ボタンテキスト変更
             aniButton.setTitle("停止", for: .normal)
@@ -122,6 +125,7 @@ class ViewController: UIViewController {
             
             if self.timer != nil{
                 timer.invalidate()
+                timer = nil
             }
             
         }else{
@@ -139,6 +143,10 @@ class ViewController: UIViewController {
     
     //ImageViewで画面遷移
     @IBAction func tapAction(_ sender: Any) {
+        
+        if self.timer != nil{
+            timer.invalidate()
+        }
         
         self.performSegue(withIdentifier: "toNextView", sender: nil)
         
