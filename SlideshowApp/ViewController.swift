@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     var imageArray : Array<UIImage> = []
     
     //表示画像の番号
-    var dispImageNo:Int! = 0
+    var dispImageNo:Int = 0
     
     func displayImage() {
         //画像配列
@@ -146,7 +146,16 @@ class ViewController: UIViewController {
         
         if self.timer != nil{
             timer.invalidate()
+            timer = nil
         }
+        
+        clickNumber += 1
+        //戻る、進む有効
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
+        
+        //ボタンテキスト変更
+        aniButton.setTitle("再生", for: .normal)
         
         self.performSegue(withIdentifier: "toNextView", sender: nil)
         
