@@ -12,8 +12,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var charaView: UIImageView!
     
-    @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var backButton: UIButton!
